@@ -3,3 +3,5 @@ how are you?
 void cc(){}
 
 sometHing is missing ;
+win"aa
+int *p;

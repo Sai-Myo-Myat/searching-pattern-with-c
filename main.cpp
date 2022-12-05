@@ -12,11 +12,7 @@ int main() {
     printf("Enter word to find: ");
     scanf(" %[^\n]",&expression);
     puts(expression);
-    int sizeOfArray = calculateSizeOfArr(expression);
     printf("program start!!!!'\n");
-    for (int i = 0; i < sizeOfArray; ++i) {
-        printf("expression char is %c \n",expression[i]);
-    }
     bool result = searching_pattern(expression);
         if (result == true) {
             printf("We found it!");
@@ -36,7 +32,6 @@ bool searching_pattern(char expression[]) {
     int currentChar = fgetc(fptr);
 
     int sizeOfArray = calculateSizeOfArr(expression);
-    printf("size %d\n",sizeOfArray);
 
     int expressionFirstChar = expression[0];
 
@@ -44,12 +39,10 @@ bool searching_pattern(char expression[]) {
         while (!feof(fptr)){
             if (currentChar == expressionFirstChar){
                 for (int i = 1; i < sizeOfArray; ++i) {
-                    printf("num of i %d size of array %d \n", i,sizeOfArray);
 
                     currentChar = fgetc(fptr);
                     int expressionNextChar = expression[i];
                     if (expressionNextChar == currentChar){
-                        printf("next value %d vs expressiosn value %d\n", currentChar,expressionNextChar);
                         isIt = true;
                     } else {
                         isIt = false;
